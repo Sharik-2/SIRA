@@ -1,0 +1,16 @@
+name: sira_flutter
+version: 1.0.0+1
+description: SIRA - Sistema de Información y Registro de Aprendices
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.6.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  supabase_flutter: ^2.0.0
+
+flutter:
+  uses-material-design: true
