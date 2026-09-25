@@ -96,10 +96,10 @@ class _AprendizFormScreenState extends State<AprendizFormScreen> {
       final originalCity = widget.aprendiz?.ciudad;
       setState(() {
         _ciudades = data;
-        _ciudad = originalCity != null &&
-                data.any((c) => c.codigo == originalCity)
-            ? originalCity
-            : null;
+        _ciudad =
+            originalCity != null && data.any((c) => c.codigo == originalCity)
+                ? originalCity
+                : null;
         _loadingCiudades = false;
       });
     } catch (e) {
@@ -180,9 +180,10 @@ class _AprendizFormScreenState extends State<AprendizFormScreen> {
                     children: [
                       Text(
                         _editing ? 'Actualizar información' : 'Nuevo aprendiz',
-                        style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                              fontWeight: FontWeight.w800,
-                            ),
+                        style:
+                            Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                  fontWeight: FontWeight.w800,
+                                ),
                       ),
                       const SizedBox(height: 6),
                       const Text('Los campos marcados con * son obligatorios.'),
@@ -259,7 +260,9 @@ class _AprendizFormScreenState extends State<AprendizFormScreen> {
                                     if (v == null || v.trim().isEmpty) {
                                       return 'Este campo es obligatorio';
                                     }
-                                    if (!v.contains('@')) return 'Correo no válido';
+                                    if (!v.contains('@')) {
+                                      return 'Correo no válido';
+                                    }
                                     return null;
                                   },
                                 ),
@@ -283,7 +286,8 @@ class _AprendizFormScreenState extends State<AprendizFormScreen> {
                           spacing: 12,
                           children: [
                             OutlinedButton(
-                              onPressed: _saving ? null : () => Navigator.pop(context),
+                              onPressed:
+                                  _saving ? null : () => Navigator.pop(context),
                               child: const Text('Cancelar'),
                             ),
                             FilledButton.icon(
@@ -292,7 +296,8 @@ class _AprendizFormScreenState extends State<AprendizFormScreen> {
                                   ? const SizedBox(
                                       width: 18,
                                       height: 18,
-                                      child: CircularProgressIndicator(strokeWidth: 2),
+                                      child: CircularProgressIndicator(
+                                          strokeWidth: 2),
                                     )
                                   : const Icon(Icons.save_outlined),
                               label: Text(_saving ? 'Guardando...' : 'Guardar'),
@@ -313,13 +318,14 @@ class _AprendizFormScreenState extends State<AprendizFormScreen> {
 
   Widget _buildDepartamentoDropdown() {
     return DropdownButtonFormField<String>(
-      value: _departamento,
+      initialValue: _departamento,
       isExpanded: true,
       decoration: const InputDecoration(
         labelText: 'Departamento *',
         prefixIcon: Icon(Icons.map_outlined),
       ),
-      hint: Text(_loadingCatalogos ? 'Cargando...' : 'Seleccione un departamento'),
+      hint: Text(
+          _loadingCatalogos ? 'Cargando...' : 'Seleccione un departamento'),
       items: _departamentos
           .map(
             (d) => DropdownMenuItem(
@@ -341,7 +347,7 @@ class _AprendizFormScreenState extends State<AprendizFormScreen> {
 
   Widget _buildCiudadDropdown() {
     return DropdownButtonFormField<String>(
-      value: _ciudad,
+      initialValue: _ciudad,
       isExpanded: true,
       decoration: const InputDecoration(
         labelText: 'Ciudad *',

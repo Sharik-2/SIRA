@@ -92,6 +92,12 @@
       "languageVersion": "3.9"
     },
     {
+      "name": "flutter_lints",
+      "rootUri": "file:///home/dia/.pub-cache/hosted/pub.dev/flutter_lints-6.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.8"
+    },
+    {
       "name": "flutter_web_plugins",
       "rootUri": "file:///home/dia/Descargas/flutter_linux_3.41.9-stable/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
@@ -132,6 +138,12 @@
       "rootUri": "file:///home/dia/.pub-cache/hosted/pub.dev/json_annotation-4.12.0",
       "packageUri": "lib/",
       "languageVersion": "3.9"
+    },
+    {
+      "name": "lints",
+      "rootUri": "file:///home/dia/.pub-cache/hosted/pub.dev/lints-6.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.8"
     },
     {
       "name": "logging",
